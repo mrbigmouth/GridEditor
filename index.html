@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+ 	<head>
+		<title>GridEditor</title>
+		<meta charset="utf-8" />
+		<meta name="author" content="mrbigmouth">
+		<link rel="author" href="b92101007@gmail.com">
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/base/base-min.css">
+		<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.0/themes/dark-hive/jquery-ui.css">
+		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="jquery.colourPicker.css">
+	</head>
+	<body>
+		<input type="button" value="新增" id="add" />　<input type="button" value="刪除" id="delete" />
+		<form id="wrap" action="javascript:">
+		</form>
+		<form id="tool" action="javascript:" style="display:none;">
+			<h4>框線設定</h4>
+			<p>
+				<input type="checkbox" class="borderSelect" data-direction="left" />左框線
+				　<input type="checkbox" class="borderSelect" data-direction="right" />右框線
+				　<input type="checkbox" class="borderSelect" data-direction="top" />上框線
+				　<input type="checkbox" class="borderSelect" data-direction="bottom" />下框線
+				<br />
+				<input type="button" value="無框線" class="setBorderNone" />
+				<select class="setBorderStyle">
+					<option value="">選擇框線樣式</option>
+					<option value="solid">實線</option>
+					<option value="dashed">虛線</option>
+					<option value="double">雙線</option>
+					<option value="dotted">點線</option>
+					<option value="groove">凹線</option>
+					<option value="ridge">凸線</option>
+					<option value="inset">嵌入線</option>
+					<option value="outset">浮出線</option>
+				</select>
+				<select class="setBorderColor">
+					<option value="000000">Black</option>
+					<option value="800000">Maroon</option>
+					<option value="8B4513">Saddle Brown</option>
+					<option value="2F4F4F">Dark Slate Gray</option>
+					<option value="008080">Teal</option>
+					<option value="000080">Navy</option>
+					<option value="4B0082">Indigo</option>
+					<option value="A9A9A9">Dark Gray</option>
+					<option value="B22222">Fire Brick</option>
+					<option value="A52A2A">Brown</option>
+					<option value="DAA520">Golden Rod</option>
+					<option value="006400">Dark Green</option>
+					<option value="40E0D0">Turquoise</option>
+					<option value="0000CD">Medium Blue</option>
+					<option value="800080">Purple</option>
+					<option value="808080">Gray</option>
+					<option value="FF0000">Red</option>
+					<option value="FF8C00">Darko range</option>
+					<option value="FFD700">Gold</option>
+					<option value="008000">Green</option>
+					<option value="00FFFF">Cyan</option>
+					<option value="0000FF">Blue</option>
+					<option value="EE82EE">Violet</option>
+					<option value="696969">Dim Gray</option>
+					<option value="FFA07A">Light Salmon</option>
+					<option value="FFA500">Orange</option>
+					<option value="FFFF00">Yellow</option>
+					<option value="00FF00">Lime</option>
+					<option value="AFEEEE">Pale Turquoise</option>
+					<option value="ADD8E6">Light Blue</option>
+					<option value="DDA0DD">Plum</option>
+					<option value="D3D3D3">Light Gray</option>
+					<option value="FFF0F5">Lavender Blush</option>
+					<option value="FAEBD7">Antique White</option>
+					<option value="FFFFE0">Light Yellow</option>
+					<option value="F0FFF0">Honey Dew</option>
+					<option value="F0FFFF">Azure</option>
+					<option value="F0F8FF">Alice Blue</option>
+					<option value="E6E6FA">Lavender</option>
+					<option value="FFFFFF">White</option>
+				</select>
+			</p>
+			<h4>背景</h4>
+			<p>
+				<select class="setBGColor">
+					<option value="000000">Black</option>
+					<option value="800000">Maroon</option>
+					<option value="8B4513">Saddle Brown</option>
+					<option value="2F4F4F">Dark Slate Gray</option>
+					<option value="008080">Teal</option>
+					<option value="000080">Navy</option>
+					<option value="4B0082">Indigo</option>
+					<option value="A9A9A9">Dark Gray</option>
+					<option value="B22222">Fire Brick</option>
+					<option value="A52A2A">Brown</option>
+					<option value="DAA520">Golden Rod</option>
+					<option value="006400">Dark Green</option>
+					<option value="40E0D0">Turquoise</option>
+					<option value="0000CD">Medium Blue</option>
+					<option value="800080">Purple</option>
+					<option value="808080">Gray</option>
+					<option value="FF0000">Red</option>
+					<option value="FF8C00">Darko range</option>
+					<option value="FFD700">Gold</option>
+					<option value="008000">Green</option>
+					<option value="00FFFF">Cyan</option>
+					<option value="0000FF">Blue</option>
+					<option value="EE82EE">Violet</option>
+					<option value="696969">Dim Gray</option>
+					<option value="FFA07A">Light Salmon</option>
+					<option value="FFA500">Orange</option>
+					<option value="FFFF00">Yellow</option>
+					<option value="00FF00">Lime</option>
+					<option value="AFEEEE">Pale Turquoise</option>
+					<option value="ADD8E6">Light Blue</option>
+					<option value="DDA0DD">Plum</option>
+					<option value="D3D3D3">Light Gray</option>
+					<option value="FFF0F5">Lavender Blush</option>
+					<option value="FAEBD7">Antique White</option>
+					<option value="FFFFE0">Light Yellow</option>
+					<option value="F0FFF0">Honey Dew</option>
+					<option value="F0FFFF">Azure</option>
+					<option value="F0F8FF">Alice Blue</option>
+					<option value="E6E6FA">Lavender</option>
+					<option value="FFFFFF">White</option>
+				</select>
+				　<input type="button" class="deleteBG" value="刪除背景" />
+			</p>
+			<h4>新增合併</h4>
+			<p>
+				<input type="button" class="addRow" data-method="before" value="新增一列於上方" />
+				　<input type="button" class="addRow" data-method="after" value="新增一列於下方" />
+				<br />
+				<input type="button" class="addColumn" data-method="before" value="新增一欄於左方" />
+				　<input type="button" class="addColumn" data-method="after" value="新增一欄於右方" />
+				<br />
+				<input type="button" class="addCell" data-method="before" value="新增一格於左方" />
+				　<input type="button" class="addCell" data-method="after" value="新增一格於右方" />
+				<br />
+				<input type="button" class="mergeGrids" value="合併儲存格" />
+				　<input type="button" class="splitGrids" value="取消合併" />
+			</p>
+			<h4>字形樣式</h4>
+			<p>
+				選擇字體：<select class="setTextFamily"></select>
+				<br />
+				字形大小：
+				<select class="setFontSize">
+					<option value="8px">8</option>
+					<option value="9px">9</option>
+					<option value="10px">10</option>
+					<option value="11px">11</option>
+					<option value="12px">12</option>
+					<option value="14px">14</option>
+					<option value="16px">16</option>
+					<option value="18px">18</option>
+					<option value="20px">20</option>
+					<option value="22px">22</option>
+					<option value="24px">24</option>
+					<option value="26px">26</option>
+					<option value="28px">28</option>
+					<option value="36px">36</option>
+					<option value="48px">48</option>
+					<option value="72px">72</option>
+				</select>
+				<input type="button" class="setBold" value="設為粗體" />
+				<input type="button" class="setItalic" value="設為斜體" />
+				<br />
+				<select class="setTextColor">
+					<option value="000000">Black</option>
+					<option value="800000">Maroon</option>
+					<option value="8B4513">Saddle Brown</option>
+					<option value="2F4F4F">Dark Slate Gray</option>
+					<option value="008080">Teal</option>
+					<option value="000080">Navy</option>
+					<option value="4B0082">Indigo</option>
+					<option value="A9A9A9">Dark Gray</option>
+					<option value="B22222">Fire Brick</option>
+					<option value="A52A2A">Brown</option>
+					<option value="DAA520">Golden Rod</option>
+					<option value="006400">Dark Green</option>
+					<option value="40E0D0">Turquoise</option>
+					<option value="0000CD">Medium Blue</option>
+					<option value="800080">Purple</option>
+					<option value="808080">Gray</option>
+					<option value="FF0000">Red</option>
+					<option value="FF8C00">Darko range</option>
+					<option value="FFD700">Gold</option>
+					<option value="008000">Green</option>
+					<option value="00FFFF">Cyan</option>
+					<option value="0000FF">Blue</option>
+					<option value="EE82EE">Violet</option>
+					<option value="696969">Dim Gray</option>
+					<option value="FFA07A">Light Salmon</option>
+					<option value="FFA500">Orange</option>
+					<option value="FFFF00">Yellow</option>
+					<option value="00FF00">Lime</option>
+					<option value="AFEEEE">Pale Turquoise</option>
+					<option value="ADD8E6">Light Blue</option>
+					<option value="DDA0DD">Plum</option>
+					<option value="D3D3D3">Light Gray</option>
+					<option value="FFF0F5">Lavender Blush</option>
+					<option value="FAEBD7">Antique White</option>
+					<option value="FFFFE0">Light Yellow</option>
+					<option value="F0FFF0">Honey Dew</option>
+					<option value="F0FFFF">Azure</option>
+					<option value="F0F8FF">Alice Blue</option>
+					<option value="E6E6FA">Lavender</option>
+					<option value="FFFFFF">White</option>
+				</select>
+			</p>
+			<h4>對齊</h4>
+			<p>
+				<input type="button" class="setAlign" data-text="left" data-vertical="top" value="左上" />
+				　<input type="button" class="setAlign" data-text="center" data-vertical="top" value="中上" />
+				　<input type="button" class="setAlign" data-text="right" data-vertical="top" value="右上" />
+				<br />
+				<input type="button" class="setAlign" data-text="left" data-vertical="middle" value="左中" />
+				　<input type="button" class="setAlign" data-text="center" data-vertical="middle" value="中中" />
+				　<input type="button" class="setAlign" data-text="right" data-vertical="middle" value="右中" />
+				<br />
+				<input type="button" class="setAlign" data-text="left" data-vertical="bottom" value="左下" />
+				　<input type="button" class="setAlign" data-text="center" data-vertical="bottom" value="中下" />
+				　<input type="button" class="setAlign" data-text="right" data-vertical="bottom" value="右下" />
+				<br />
+			</p>
+			<h4>刪除</h4>
+			<p>
+				<input type="button" class="deleteStyle" value="刪除樣式" />
+				　<input type="button" class="deleteContent" value="刪除內容" />
+				　<input type="button" class="deleteGrid" value="刪除儲存格" />
+			</p>
+			<h4>選取</h4>
+			<p>
+				<input type="checkbox" class="noFirstRow" /> 不含第一列
+				　<input type="checkbox" class="noFirstColumn" /> 不含第一欄
+				<br />
+				<input type="button" class="selectSome" data-selectrow="1" data-selecteven="0" value="選取單數列" />
+				　<input type="button" class="selectSome" data-selectrow="1"  data-selecteven="1" value="選取雙數列" />
+				<br />
+				<input type="button" class="selectSome" data-selecteven="0" value="選取單數欄" />
+				　<input type="button" class="selectSome" data-selecteven="1" value="選取雙數欄" />
+			</p>
+			<h4>其他</h4>
+			<p>
+				Padding:<input type="text" class="number Padding" />
+				　<input type="button" class="setPadding" value="設定" />
+				<br />
+				列:<input type="number" class="number newRow" value="3" />
+				　欄:<input type="number" class="number newCol" value="3" />
+				　<input type="button" class="resetTable" value="重設表格" />
+			</p>
+		</form>
+	</body>
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.0.min.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.0/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.3/underscore-min.js"></script>
+	<script src="jquery.colourPicker.js"></script>
+	<script src="index.js"></script>
+</html>
